@@ -30,4 +30,12 @@ class Restaurant
       false
     end
   end
+
+  def menu_dish_names
+    capitalized_dishes = []
+    dishes.each do |dish|
+      capitalized_dishes << dish.upcase
+    end
+    return capitalized_dishes
+  end
 end
