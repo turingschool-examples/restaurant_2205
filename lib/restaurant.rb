@@ -49,10 +49,16 @@ class Restaurant
       closing_hour = closing_hour % 24
     end
 
+    # If closing hour is 24 (midnight) return 12:00AM
     if closing_hour == 24
       return "#{name} will be closing at #{closing_hour - 12}:00AM"
+    # If closing hour is 12 (noon) return 12:00PM
+    elsif closing_hour == 12
+      return "#{name} will be closing at #{closing_hour}:00PM"
+    # If closing hour is before noon, return AM
     elsif closing_hour <= 11
       return "#{name} will be closing at #{closing_hour}:00AM"
+    # If closing hour is after noon, return PM
     else
       closing_hour -= 12
       return "#{name} will be closing at #{closing_hour}:00PM"
