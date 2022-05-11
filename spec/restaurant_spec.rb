@@ -67,4 +67,15 @@ RSpec.describe Restaurant do
       expect(restaurant.menu_dish_names).to eq ["BURRATA", "PIZZETTA", "RAVIOLI"]
     end
   end
+
+  describe "Iteration 4" do
+    it "annonces closing time in 12 hour format" do
+      restaurant1 = Restaurant.new('6:00', 'Fuel Cafe')
+      restaurant2 = Restaurant.new('16:00', 'Il Poggio')
+
+      expect(restaurant1.announce_closing_time).to eq "Fuel Cafe will be closing at 11:00AM"
+      expect(restaurant2.announce_closing_time).to eq "Il Poggio will be closing at 11:00PM"
+    end
+  end
+
 end
