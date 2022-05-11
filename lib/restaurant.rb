@@ -14,6 +14,18 @@ class Restaurant
     c_time.to_s + ":00"
   end
 
+  def announce_closing_time(hours)
+    o_time = @opening_time.gsub(":00","")
+    c_time = o_time.to_i + hours
+    if c_time > 12
+      (closing_time = c_time - 12;
+        announcement = "#{@name} will be closing at " + closing_time.to_s + ":00PM")
+    else
+      announcement = "#{@name} will be closing at " + c_time.to_s + ":00AM"
+    end
+    return announcement
+  end
+
   def add_dish(dish_name)
     @dishes << dish_name
   end
@@ -34,5 +46,4 @@ class Restaurant
     end
     dish_names
   end
-
 end
