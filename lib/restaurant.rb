@@ -22,7 +22,18 @@ class Restaurant
   end
 
   def open_for_lunch?
+    binding.pry
+    if @opening_time.to_f < 12
+      true
+    end
   end
 
+  def menu_dish_names
+    dish_names = []
+    @dishes.each do |dish|
+      dish_names << dish.upcase
+    end
+    return dish_names
+  end
 
 end
