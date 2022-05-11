@@ -18,4 +18,21 @@ class Restaurant
     @dishes << dish_name
   end
 
+  def open_for_lunch?
+    o_time = @opening_time.gsub(":00","")
+    if o_time.to_i <= 12
+      return true
+    else
+      return false
+    end
+  end
+
+  def menu_dish_names
+    dish_names = []
+    @dishes.each do |dish|
+      dish_names << dish.upcase
+    end
+    dish_names
+  end
+
 end
