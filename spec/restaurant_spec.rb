@@ -5,6 +5,7 @@ RSpec.describe Restaurant do
     it "exists" do
       restaurant = Restaurant.new('10:00', 'Fuel Cafe')
       expect(restaurant).to be_an_instance_of Restaurant
+
     end
 
     # These tests are skipped - remove the "x" from "xit" so that each test
@@ -28,7 +29,7 @@ RSpec.describe Restaurant do
 
   describe "Iteration 2" do
 
-    xit "has closing time" do
+    it "has closing time" do
       restaurant1 = Restaurant.new('10:00', 'Fuel Cafe')
       restaurant2 = Restaurant.new('16:00', 'Il Poggio')
 
@@ -36,7 +37,7 @@ RSpec.describe Restaurant do
       expect(restaurant2.closing_time(7)).to eq("23:00")
     end
 
-    xit "can add dishes" do
+    it "can add dishes" do
       restaurant = Restaurant.new('16:00', 'Il Poggio')
       restaurant.add_dish('Burrata')
       restaurant.add_dish('Pizzetta')
