@@ -48,3 +48,23 @@ RSpec.describe Restaurant do
 
   end
 end
+
+  describe "Iteration 3" do
+
+    xit "is open for lunch" do
+      restaurant1 = Restaurant.new('10:00', 'Fuel Cafe')
+      restaurant2 = Restaurant.new('16:00', 'Il Poggio')
+
+      expect(restaurant1.open_for_lunch?).to eq(true)
+      expect(restaurant2.open_for_lunch?).to eq(false)
+    end
+
+    it "has a menu" do
+      restaurant1 = Restaurant.new('10:00', 'Fuel Cafe')
+      restaurant2 = Restaurant.new('16:00', 'Il Poggio')
+
+      expect(restaurant1.menu_dish_names).to eq(["BURRATA", "PIZZETA", "RAVIOLI"])
+      expect(restaurant2.menu_dish_names).to eq(["BREAKFAST BURRITO", "PIZZETA", "RAVIOLI"])
+
+    end
+  end
