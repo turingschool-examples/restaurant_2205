@@ -8,18 +8,18 @@ RSpec.describe Restaurant do
     end
 
     # These tests are skipped - remove the "x" from "xit" so that each test
-    # line reads "it" in order to run each test. 
-    xit "has opening time" do
+    # line reads "it" in order to run each test.
+    it "has opening time" do
       restaurant = Restaurant.new('10:00', 'Fuel Cafe')
       expect(restaurant.opening_time).to eq("10:00")
     end
 
-    xit "has a name" do
+    it "has a name" do
       restaurant = Restaurant.new('10:00', 'Fuel Cafe')
       expect(restaurant.name).to eq("Fuel Cafe")
     end
 
-    xit "has no dishes to start" do
+    it "has no dishes to start" do
       restaurant = Restaurant.new('10:00', 'Fuel Cafe')
       expect(restaurant.dishes).to eq([])
     end
@@ -28,15 +28,18 @@ RSpec.describe Restaurant do
 
   describe "Iteration 2" do
 
-    xit "has closing time" do
+    it "has closing time" do
       restaurant1 = Restaurant.new('10:00', 'Fuel Cafe')
       restaurant2 = Restaurant.new('16:00', 'Il Poggio')
+      restaurant1.add_closing_time("18:00")
+      restaurant2.add_closing_time("23:00")
+
 
       expect(restaurant1.closing_time(8)).to eq("18:00")
       expect(restaurant2.closing_time(7)).to eq("23:00")
     end
 
-    xit "can add dishes" do
+    it "can add dishes" do
       restaurant = Restaurant.new('16:00', 'Il Poggio')
       restaurant.add_dish('Burrata')
       restaurant.add_dish('Pizzetta')
