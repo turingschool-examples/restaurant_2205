@@ -2,13 +2,13 @@ class Restaurant
 	attr_reader :opening_time,
 							:name,
 							:dishes,
-							:closing_time
+							:closing_time,
+							:open_for_lunch
 
 	def initialize(opening_time, name)
 		@opening_time = opening_time
 		@name = name
 		@dishes = []
-		@closing_time = []
 
 	end
 
@@ -21,4 +21,11 @@ class Restaurant
 		@dishes << dish
 	end
 
+	def open_for_lunch?(opening_time)
+		opening_time.to_i < 12
+	end
+
+	def menu_dish_names
+		@dishes.map!(&:upcase)
+	end
 end
