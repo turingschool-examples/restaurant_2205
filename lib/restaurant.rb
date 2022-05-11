@@ -28,6 +28,19 @@ class Restaurant
     end
   end
 
-  
+  def announce_closing_time(time)
+    if closing_time(time).to_i < 12
+      "#{@name} will be closing at #{closing_time(time).to_i}:00AM"
+    else
+      "#{@name} will be closing at #{closing_time(time).to_i - 12 }:00PM"
+    end
+
+    # if @name = "Fuel Cafe"
+    #   "#{@name} will be closing at 11:00AM"
+    # elsif @name = "Il Posto"
+    #   "#{@name} will be closing at 11:00PM"
+    # end
+    # require "pry"; binding.pry
+  end
 
 end
