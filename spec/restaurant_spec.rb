@@ -58,6 +58,16 @@ RSpec.describe Restaurant do
       expect(restaurant1.open_for_lunch?).to be true
       expect(restaurant2.open_for_lunch?).to be false
     end
+
+    it "can list menu items in all caps" do
+      restaurant2 = Restaurant.new('16:00', 'Il Poggio')
+      restaurant2.add_dish('Burrata')
+      restaurant2.add_dish('Pizzetta')
+      restaurant2.add_dish('Ravioli')
+
+      expect(restaurant2.menu_dish_names).to eq(["BURRATA", "PIZZETTA", "RAVIOLI"])
+    end
+
   end
 
   describe "Iteration 4" do
