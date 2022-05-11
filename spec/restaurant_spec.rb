@@ -8,18 +8,18 @@ RSpec.describe Restaurant do
     end
 
     # These tests are skipped - remove the "x" from "xit" so that each test
-    # line reads "it" in order to run each test. 
-    xit "has opening time" do
+    # line reads "it" in order to run each test.
+    it "has opening time" do
       restaurant = Restaurant.new('10:00', 'Fuel Cafe')
       expect(restaurant.opening_time).to eq("10:00")
     end
 
-    xit "has a name" do
+    it "has a name" do
       restaurant = Restaurant.new('10:00', 'Fuel Cafe')
       expect(restaurant.name).to eq("Fuel Cafe")
     end
 
-    xit "has no dishes to start" do
+    it "has no dishes to start" do
       restaurant = Restaurant.new('10:00', 'Fuel Cafe')
       expect(restaurant.dishes).to eq([])
     end
@@ -28,7 +28,7 @@ RSpec.describe Restaurant do
 
   describe "Iteration 2" do
 
-    xit "has closing time" do
+    it "has closing time" do
       restaurant1 = Restaurant.new('10:00', 'Fuel Cafe')
       restaurant2 = Restaurant.new('16:00', 'Il Poggio')
 
@@ -36,7 +36,7 @@ RSpec.describe Restaurant do
       expect(restaurant2.closing_time(7)).to eq("23:00")
     end
 
-    xit "can add dishes" do
+    it "can add dishes" do
       restaurant = Restaurant.new('16:00', 'Il Poggio')
       restaurant.add_dish('Burrata')
       restaurant.add_dish('Pizzetta')
@@ -47,4 +47,33 @@ RSpec.describe Restaurant do
     end
 
   end
+
+  describe "Iteration 3" do
+
+    it "is open for lunch" do
+    restaurant1 = Restaurant.new('10:00', 'Fuel Cafe')
+    restaurant2 = Restaurant.new('16:00', 'Il Posto')
+    expect(restaurant1.open_for_lunch?).to be(true)
+    expect(restaurant2.open_for_lunch?).to be(false)
+    end
+
+    it "has a menu" do
+    restaurant1 = Restaurant.new('10:00', 'Fuel Cafe')
+    restaurant2 = Restaurant.new('16:00', 'Il Posto')
+    restaurant2.add_dish('Burrata')
+    restaurant2.add_dish('Pizzetta')
+    restaurant2.add_dish('Ravioli')
+    expect(restaurant2.menu_dish_names).to eq["BURRATA", "PIZZETTA", "RAVIOLI"]
+  end
+  end
+
+  describe "Iteration 4" do
+
+   it "announces a closing time" do
+     restaurant1 = Restaurant.new('6:00', 'Fuel Cafe')
+     restaurant2 = Restaurant.new('16:00', 'Il Posto')
+     expect(restaurant1.announce_closing_time(5)).to eq("Fuel Cafe will be closing at 11:00AM")
+     expect(restaurant2.announce_closing_time(7)).to eq("Il Posto will be closing at 11:00PM")
+    end
+   end
 end
