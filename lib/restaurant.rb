@@ -9,7 +9,7 @@ class Restaurant
   end
 
   def closing_time(time)
-    open_time_hour = @opening_time[0,2]
+    open_time_hour = @opening_time.split(/:/,2).first.to_i
     "#{open_time_hour.to_i + time}"+":00"
   end
 
@@ -18,7 +18,8 @@ class Restaurant
   end
 
   def open_for_lunch?
-    open_time_hour = @opening_time[0,2].to_i
+    open_time_hour = @opening_time.split(/:/,2).first.to_i
+
     if open_time_hour < 12
       return true
     else
@@ -38,7 +39,8 @@ class Restaurant
   end
 
   def announce_closing_time(time)
-    open_time_hour = @opening_time[0,2].to_i
+    open_time_hour = @opening_time.split(/:/,2).first.to_i
+
 
     if open_time_hour + time > 12
       return "#{@name} will be closing at #{(open_time_hour+time)-12}:00PM"
