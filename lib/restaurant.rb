@@ -18,7 +18,6 @@ attr_accessor :opening_time, :name, :dishes
 
   def open_for_lunch?
     if opening_time.to_i < 13
-#require "pry"; binding.pry
       true
     else
       false
