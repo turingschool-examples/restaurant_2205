@@ -19,7 +19,7 @@ RSpec.describe Restaurant do
       expect(restaurant.name).to eq("Fuel Cafe")
     end
 
-    xit "has no dishes to start" do
+    it "has no dishes to start" do
       restaurant = Restaurant.new('10:00', 'Fuel Cafe')
       expect(restaurant.dishes).to eq([])
     end
