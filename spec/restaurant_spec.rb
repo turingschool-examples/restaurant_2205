@@ -49,11 +49,11 @@ RSpec.describe Restaurant do
 
   describe "Iteration 3" do
     before :each do
-      @estaurant1 = Restaurant.new('10:00', 'Fuel Cafe')
+      @restaurant1 = Restaurant.new('10:00', 'Fuel Cafe')
       @restaurant2 = Restaurant.new('16:00', 'Il Posto') #love this restaurant
     end
 
-    xit 'can tell if it is open for lunch' do
+    it 'can tell if it is open for lunch' do
       expect(@restaurant1.open_for_lunch?).to eq(true)
       expect(@restaurant2.open_for_lunch?).to eq(false)
     end
