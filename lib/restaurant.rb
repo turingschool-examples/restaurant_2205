@@ -36,11 +36,10 @@ class Restaurant
     if closing_time_to_12_hrs > 12
       closing_time_to_12_hrs -= 12
     end
-
-    closing_time_to_12_hrs_w_00 = closing_time_to_12_hrs.to_s.concat(':00')
+    closing_time_to_12_hrs = closing_time_to_12_hrs.to_s.concat(':00')
 
     (@opening_time.to_i + hrs) > 12 ? am_pm = "PM" : am_pm = "AM"
 
-    "#{name} will be closing at #{closing_time_to_12_hrs_w_00}#{am_pm}"
+    "#{name} will be closing at #{closing_time_to_12_hrs}#{am_pm}"
   end
 end
