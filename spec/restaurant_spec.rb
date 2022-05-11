@@ -90,6 +90,12 @@ RSpec.describe Restaurant do
 
       expect(restaurant1.announce_closing_time(18)).to eq "Fuel Cafe will be closing at 12:00AM"
     end
+
+    it "handles edge case where the closing hour is noon" do
+      restaurant1 = Restaurant.new('6:00', 'Fuel Cafe')
+
+      expect(restaurant1.announce_closing_time(6)).to eq "Fuel Cafe will be closing at 12:00PM"
+    end
   end
 
 end
