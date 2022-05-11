@@ -36,14 +36,13 @@ RSpec.describe Restaurant do
       expect(restaurant2.closing_time(7)).to eq("23:00")
     end
 
-    xit "can add dishes" do
+    it "can add dishes" do
       restaurant = Restaurant.new('16:00', 'Il Poggio')
       restaurant.add_dish('Burrata')
       restaurant.add_dish('Pizzetta')
       restaurant.add_dish('Ravioli')
 
       expect(restaurant.dishes).to eq(['Burrata', 'Pizzetta', 'Ravioli'])
-
     end
 
   end
