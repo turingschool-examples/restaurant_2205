@@ -6,10 +6,11 @@ class Restaurant
     @dishes = []
   end
 
+
   def closing_time(hours)
+
     new_time = opening_time.to_i + hours
-    new_time.to_s
-  ###I keep getting stuck on how to take "18" and get "18:00"###
+    new_time.to_s + ":00"
   end
 
   def add_dish(dish)
