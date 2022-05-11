@@ -33,7 +33,10 @@ class Restaurant
   end
 
   def announce_closing_time(hours)
-    if @start_hour + hours > 12
+    if @start_hour + hours > 24
+      @close_hour = @start_hour + hours - 24
+      return @close_hour.to_s + ":00AM"
+    elsif @start_hour + hours > 12
       @close_hour = @start_hour + hours - 12
       return @close_hour.to_s + ":00PM"
     else
