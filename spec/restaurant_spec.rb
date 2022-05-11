@@ -58,5 +58,15 @@ RSpec.describe Restaurant do
       expect(restaurant2.open_for_lunch?).to be false
     end
 
+    it "is excited about their dishes" do
+      restaurant1 = Restaurant.new('10:00', 'Fuel Cafe')
+
+      restaurant1.add_dish('Burrata')
+      restaurant1.add_dish('Pizzetta')
+      restaurant1.add_dish('Ravioli')
+
+      expect(restaurant1.menu_dish_names).to eq(['BURRATA','PIZZETTA','RAVIOLI'])
+    end
+
   end
 end
