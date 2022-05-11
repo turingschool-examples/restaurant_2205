@@ -47,4 +47,16 @@ RSpec.describe Restaurant do
     end
 
   end
+
+  describe "Iteration 3" do
+
+    it "can be open or closed for lunch" do
+      restaurant1 = Restaurant.new('10:00', 'Fuel Cafe')
+      restaurant2 = Restaurant.new('16:00', 'Il Poggio')
+
+      expect(restaurant1.open_for_lunch?).to be false
+      expect(restaurant2.open_for_lunch?).to be true
+    end
+
+  end
 end
