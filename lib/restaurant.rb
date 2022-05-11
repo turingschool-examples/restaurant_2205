@@ -32,11 +32,19 @@ class Restaurant
     array
   end
 
+  def announce_closing_time(number)
+    closing = closing_time(number)
+    if closing.to_i > 12
+      new = closing.to_i - 12
+      new = new.to_s.insert(-1, ':00PM')
+      "#{@name} will be closing at #{new}"
+    else
+      new = closing.to_s.insert(-1, 'AM')
+      "#{@name} will be closing at #{new}"
+    end
+  end
+
 end
 
-restaurant2 = Restaurant.new('16:00', 'Il Posto')
-restaurant2.add_dish('Burrata')
-restaurant2.add_dish('Pizzetta')
-restaurant2.add_dish('Ravioli')
-
-p restaurant2.menu_dish_names
+restaurant1 = Restaurant.new('6:00', 'Fuel Cafe')
+p restaurant1.announce_closing_time(5)
