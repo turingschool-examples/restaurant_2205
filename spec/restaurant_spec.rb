@@ -8,8 +8,8 @@ RSpec.describe Restaurant do
     end
 
     # These tests are skipped - remove the "x" from "xit" so that each test
-    # line reads "it" in order to run each test. 
-    xit "has opening time" do
+    # line reads "it" in order to run each test.
+    it "has opening time" do
       restaurant = Restaurant.new('10:00', 'Fuel Cafe')
       expect(restaurant.opening_time).to eq("10:00")
     end
