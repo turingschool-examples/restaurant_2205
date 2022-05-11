@@ -1,7 +1,7 @@
 require 'time'
 
 class Restaurant
-  attr_reader :opening_time, :opening_hour, :closing_time, :name, :dishes
+  attr_reader :opening_time, :opening_hour, :closing_time, :closing_hour, :name, :dishes
 
   def initialize(opening_time, name)
     @name = name

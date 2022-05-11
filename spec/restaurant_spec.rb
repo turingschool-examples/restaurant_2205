@@ -62,9 +62,11 @@ RSpec.describe Restaurant do
   describe "Iteration 4" do
 
     it "can can announce the closing time" do
+      restaurant3 = Restaurant.new('6:00', 'Fuel Bistro')
+      restaurant4 = Restaurant.new('16:00', 'Il Posto')
+      expect(restaurant3.announce_closing_time(5)).to eq("Fuel Bistro will be closing at 11:00AM")
       require "pry"; binding.pry
-      expect(restaurant1.announce_closing_time(5)).to eq("Fuel Cafe will be closing at 11:00AM")
-      expect(restaurant2.announce_closing_time(7)).to eq("Il Poggio will be closing at 11:00PM")
+      expect(restaurant4.announce_closing_time(7)).to eq("Il Posto will be closing at 11:00PM")
     end
   end
 end
