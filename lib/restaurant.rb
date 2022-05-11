@@ -38,4 +38,15 @@ class Restaurant
     end
     return capitalized_dishes
   end
+
+  def announce_closing_time(hours_elapsed)
+    opening_hour = opening_time[0..1].to_i
+    closing_hour = opening_hour + hours_elapsed
+    if closing_hour <= 11
+      return "#{name} will be closing at #{closing_hour}:00AM"
+    else
+      closing_hour -= 12
+      return "#{name} will be closing at #{closing_hour}:00PM"
+    end
+  end
 end
