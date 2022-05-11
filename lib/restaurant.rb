@@ -32,7 +32,6 @@ class Restaurant
   def announce_closing_time(hours)
     @hours = hours
     time = opening_time[0,2].to_i + hours
-    require "pry"; binding.pry
     if time > 12
       time = (time - 12).to_s + ":00PM"
     else
