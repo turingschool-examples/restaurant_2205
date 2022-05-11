@@ -18,4 +18,16 @@ class Restaurant
     @dishes << dish
   end
 
+  def open_for_lunch?
+      if @opening_time.to_i > 12
+        false
+      else
+        true
+      end
+  end
+
+  def menu_dish_names
+    @dishes.map {|dish| dish.upcase}
+  end
+
 end
