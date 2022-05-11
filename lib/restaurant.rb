@@ -17,14 +17,20 @@ class Restaurant
     @dishes << dish
   end
 
-  def open_for_lunch?()
-    opening_time.to_i
+  def open_for_lunch?
+    lunch_time = opening_time.delete(":00")
+    new = lunch_time.to_i
+    if new < 12
       true
-      false
+
     end
 
+
+
+  end
+
   def menu_dish_names
-    return @dishes.upcase if open_for_lunch? == true
+    @dishes << add_dish.upcase
 
   end
 end
