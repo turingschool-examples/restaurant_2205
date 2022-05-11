@@ -43,15 +43,16 @@ class Restaurant
     opening_hour = opening_time[0..1].to_i
     closing_hour = opening_hour + hours_elapsed
 
-    # If statement to handle edge cases of closing hour at or past midnight (12:00AM)
+    # If statement to handle edge cases of closing hour past midnight
+    # e.g. closing_hour > 24
     if closing_hour > 24
       closing_hour = closing_hour % 24
-    elsif closing_hour == 24
-      closing_hour = 12
     end
 
-    if closing_hour <= 11
-        return "#{name} will be closing at #{closing_hour}:00AM"
+    if closing_hour == 24
+      return "#{name} will be closing at #{closing_hour - 12}:00AM"
+    elsif closing_hour <= 11
+      return "#{name} will be closing at #{closing_hour}:00AM"
     else
       closing_hour -= 12
       return "#{name} will be closing at #{closing_hour}:00PM"
