@@ -32,8 +32,19 @@ class Restaurant
     dishes.each do |dish|
       dishes_aggregator << dish.upcase
     end
-    
+
     return dishes_aggregator
+
+  end
+
+  def announce_closing_time(time)
+    open_time_hour = @opening_time[0,2].to_i
+
+    if open_time_hour + time > 12
+      return "#{@name} will be closing at #{(open_time_hour+time)-12}:00PM"
+    elsif open_time_hour + time <= 12
+      return "#{@name} will be closing at #{(open_time_hour+time)}:00AM"
+    end
 
   end
 
