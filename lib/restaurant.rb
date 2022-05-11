@@ -4,6 +4,7 @@ attr_reader :opening_time, :name, :dishes
     @opening_time = opening_time
     @name = name
     @dishes = []
+    # @announce_closing_time = announce_closing_time
   end
 
   def closing_time(operating_hours)
@@ -16,6 +17,10 @@ attr_reader :opening_time, :name, :dishes
   end
 
   def open_for_lunch?
-    opening_time == "10:00"
+    opening_time.to_i < 11
   end
+
+  # def announce_closing_time(time)
+  #
+  # end
 end

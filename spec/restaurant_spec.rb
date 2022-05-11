@@ -60,4 +60,14 @@ RSpec.describe Restaurant do
     end
   end
 
+  describe "Iteration 4" do
+
+    xit "announces closing time" do
+      restaurant1 = Restaurant.new('6:00', 'Fuel Cafe')
+      restaurant2 = Restaurant.new('16:00', 'Il Posto')
+
+      expect(restaurant1.announce_closing_time(5)).to eq "11:00AM"
+      expect(restaurant2.announce_closing_time(7)).to eq "11:00PM"
+    end
+  end
 end
