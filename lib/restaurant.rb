@@ -29,5 +29,16 @@ class Restaurant
 
   end
 
+  def announce_closing_time(hours_open)
+    closing_time =
+    # didn't quite finish this method (obviously)
+    "#{name} will be closing at #{opening_time.to_i + hours_open}:00"
+    if closing time >= 12
+      "PM"
+    else
+      "AM"
+
+    end
+  end
 
 end
