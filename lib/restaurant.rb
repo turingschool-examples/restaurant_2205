@@ -33,4 +33,10 @@ class Restaurant
     return dish_names
   end
 
+  def announce_closing_time(time)
+    announcement = "#{@name} will be closing at #{}"
+    # if i did this again I would think about making a converter
+    # to make ruby time easier to convert to and fro
+  end
+
 end
