@@ -1,5 +1,6 @@
 require './lib/restaurant'
 
+
 RSpec.describe Restaurant do
   describe "Iteration 1" do
     it "exists" do
@@ -70,9 +71,9 @@ RSpec.describe Restaurant do
 
   describe "Iteration 4" do
 
-    xit "announces the closing time" do
+    it "announces the closing time" do
       restaurant1 = Restaurant.new('10:00', 'Fuel Cafe')
-      expect(restaurant1.announce_closing_time(8)).to eq("6:00")
+      expect(restaurant1.announce_closing_time(8)).to eq("6:00 PM")
     end
   end
 end

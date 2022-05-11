@@ -17,6 +17,17 @@ class Restaurant
   end
 
 
+  def announce_closing_time(hours)
+    @opening_time_int = opening_time[0,2].to_i
+    closing_time_int = opening_time_int + hours
+    if closing_time_int >= 12
+      @closing_time = (closing_time_int - 12).to_s + ":00 PM"
+
+    else
+      @closing_time = closing_time_int.to_s + ":00 AM"
+    end
+  end
+
 
 
   def add_dish(new_dish)
