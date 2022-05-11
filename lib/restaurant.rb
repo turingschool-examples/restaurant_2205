@@ -11,4 +11,9 @@ class Restaurant
     @dishes << dish
   end
 
+  def closing_time(time)
+    time.to_s
+    @time = time + @opening_time
+  end
+
 end
