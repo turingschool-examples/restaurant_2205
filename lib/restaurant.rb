@@ -22,4 +22,12 @@ class Restaurant
     end
   end
 
+  def menu_dish_names
+    @dishes.map do |dish|
+      dish.upcase
+    end
+  end
+
+  
+
 end

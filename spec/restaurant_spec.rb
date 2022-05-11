@@ -59,12 +59,11 @@ RSpec.describe Restaurant do
     end
 
     it "return dish names collection in all caps" do
-      restaurant1 = Restaurant.new('10:00', 'Fuel Cafe')
       restaurant2 = Restaurant.new('16:00', 'Il Poggio')
       restaurant2.add_dish('Burrata')
       restaurant2.add_dish('Pizzetta')
       restaurant2.add_dish('Ravioli')
-      expect(restaurant1.menu_dish_names).to eq(["BURRATA", "PIZZETTA", "RAVIOLI"])
+      expect(restaurant2.menu_dish_names).to eq(["BURRATA", "PIZZETTA", "RAVIOLI"])
     end
 
   end
