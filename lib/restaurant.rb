@@ -14,4 +14,8 @@ attr_reader :opening_time, :name, :dishes
   def add_dish(menu_item)
     @dishes << menu_item
   end
+
+  def open_for_lunch?
+    opening_time == "10:00"
+  end
 end
