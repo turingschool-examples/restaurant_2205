@@ -14,7 +14,7 @@ RSpec.describe Restaurant do
       expect(restaurant.opening_time).to eq("10:00")
     end
 
-    xit "has a name" do
+    it "has a name" do
       restaurant = Restaurant.new('10:00', 'Fuel Cafe')
       expect(restaurant.name).to eq("Fuel Cafe")
     end
