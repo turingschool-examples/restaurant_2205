@@ -22,7 +22,7 @@ class Restaurant
     end
 
     def open_for_lunch?
-        if opening_time.to_i < 16
+        if opening_time.to_i < 12
             true
         else
             false
@@ -39,19 +39,18 @@ class Restaurant
 
     def announce_closing_time(hours)
         time = @opening_time.to_i + hours
-        binding.pry
         if time > 24
             new_int = @closed - 24
             binding.pry
             if new_int > 12
-                @closing_announce_time = "#{24 - new_int}:00PM"
+                @closing_announce_time = "#{new_int - 12}:00PM"
                 "#{@name} will be closing at #{closing_announce_time}"
             else
                  @closing_announce_time = "#{new_int}:00AM"
                  "#{@name} will be closing at #{closing_announce_time}"
             end
         elsif time >= 12
-            @closing_announce_time = "#{24 - time}:00PM"
+            @closing_announce_time = "#{time - 12}:00PM"
             "#{@name} will be closing at #{closing_announce_time}"
         else
            @closing_announce_time = "#{time}:00AM"
